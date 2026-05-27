@@ -1,0 +1,471 @@
+/* ==========================================
+   1. 전체 기본 세팅 및 넓은 간격 (배경/글씨 색상)
+   ========================================== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    color: #000000;       /* 전체 기본 글씨 검은색 */
+    background-color: #ffffff;
+}
+
+/* 상단 네이비 헤더 영역 - 칸을 넓게 배치 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;   /* 상하좌우 여백을 넓혀 시원하게 정돈 */
+    background-color: #1F2A44; /* 메인 컬러 네이비 */
+}
+
+.logo {
+    width: 100px;
+}
+.logo img {
+    width: 80px;
+    height: auto; /* 이미지 비율 깨짐 방지 */
+}
+
+nav {
+    display: flex;
+    gap: 35px; 
+    align-items: center;
+}
+
+/* ★ 수정: WORK 메뉴(1,2,3,4)를 포함한 모든 헤더 링크 글자색을 하얀색으로 통일 */
+header nav a,
+nav a {
+    text-decoration: none;
+    color: #ffffff !important; /* 하얀색 강제 적용 */
+    font-weight: bold;
+    font-size: 15px;
+    transition: color 0.2s ease-in-out;
+}
+
+/* ★ 추가: 활성화된 메뉴나 마우스 올렸을 때 포인트 블루 컬러 효과 */
+header nav a:hover,
+header nav a.active,
+nav a:hover {
+    color: #3A7BFF !important;
+}
+
+/* HOME (HERO) 영역 - 업로드한 이미지를 배경으로 꽉 차게 배치 */
+.hero {
+    text-align: center;
+    padding: 160px 20px;  /* 위아래 간격을 넓혀 개방감을 줌 */
+    background-image: url(../pppppppp/img/heroooo.jpg); 
+    background-size: cover;       /* 이미지가 왜곡 없이 영역을 가득 채움 */
+    background-position: center;   /* 이미지의 중심을 가운데로 정렬 */
+    background-repeat: no-repeat;  /* 이미지 반복 방지 */
+}
+
+.hero h1 {
+    font-size: 54px; 
+    margin-bottom: 35px;
+    color: #000000;       /* 글씨 검은색 */
+}
+
+.hero p {
+    color: #000000;       /* 글씨 검은색 */
+    font-size: 18px; 
+    line-height: 1.8;
+}
+
+.hero .hero-sub {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #666666;
+}
+
+/* '가장 앞에서 끝까지' 주변 글씨보다 더 크고 굵게, 맨 위 헤더색(#1F2A44)과 동일하게 설정 */
+.highlight-text {
+    font-weight: 800 !important; /* 아주 두껍게 처리 */
+    font-size: 23px !important;  /* 주변 글씨(18px)보다 더 크게 확대 */
+    color: #1F2A44 !important;   /* 맨 위 헤더 영역 배경색과 일치 */
+    display: inline-block;
+    margin: 0 4px;
+    vertical-align: middle;
+}
+
+/* GO 버튼 마우스 올리기 전/후 색상 전면 반전 */
+.btn-more {
+    display: inline-block;
+    margin-top: 45px;
+    padding: 14px 45px; 
+    background-color: #1F2A44;  /* 누르기 전 (평상시): 메인 네이비 컬러 */
+    color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: all 0.25s ease-in-out;
+}
+
+/* 마우스를 올렸을 때 (Hover) */
+.btn-more:hover {
+    background-color: #3A7BFF;  /* 누르기 전/올린 후: 포인트 블루 컬러 */
+}
+
+
+/* ==========================================
+   2. ABOUT ME 섹션 넓은 여백 및 점(•) 컬러 커스텀
+   ========================================== */
+.section {
+    padding: 120px 40px;        /* 칸마다 위아래 120px로 넓고 쾌적하게 설정 */
+}
+
+.section-title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 70px; 
+    color: #000000;             /* 글씨 검은색 */
+    letter-spacing: 1px;
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    gap: 70px;                  /* 사진과 글 영역 사이를 넓게 정돈 */
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-image img {
+    width: 240px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #1F2A44;                 /* 메인 네이비 */
+    border-left: 4px solid #3A7BFF; /* 왼쪽에 예쁜 파란색 포인트 세로줄 */
+    padding-left: 12px;
+}
+
+/* 목록 스타일 정의 */
+.experience-list {
+    list-style: disc; /* 브라우저 기본 원형 점 표기 */
+    padding-left: 20px; 
+    margin-bottom: 50px; 
+}
+
+.experience-list li {
+    margin-bottom: 16px;        /* 줄글 사이를 넓게 넓게 벌려서 가독성 확보 */
+    color: #000000;             /* 글씨 검은색 */
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ABOUT ME 목록의 점(•)만 쏙 골라 포인트 컬러(#3A7BFF)로 변경 */
+.experience-list li::marker {
+    color: #3A7BFF;             /* 포인트 블루 컬러 적용 */
+    font-size: 18px;            /* 점이 잘 보이도록 크기 보정 */
+}
+
+
+/* ==========================================
+   3. CONTACT & FOOTER 영역 간격 조정
+   ========================================== */
+#contact {
+    text-align: center;
+    padding: 100px 20px;        /* 칸을 시원하게 확장 */
+    background-color: #F5F6F8;  /* 배경 라이트 그레이 */
+}
+
+.contact-content p {
+    color: #000000;             /* 글씨 검은색 */
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;         /* 하단 푸터 영역 여백 확장 */
+    background-color: #1F2A44;  /* 메인 네이비 */
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+
+/* ==========================================
+   4. 상단 WORK 메뉴 아래 드롭다운 간략 제목 기능
+   ========================================== */
+.nav-item {
+    position: relative;
+    display: inline-block;
+    padding: 10px 0;
+}
+
+/* 마우스를 올렸을 때 슥 떨어질 서브메뉴 박스 */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff; /* 글자가 잘 보이도록 상자 내부는 흰색 유지 */
+    min-width: 250px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.12);
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    padding: 10px 0;
+    margin-top: 15px;
+    z-index: 999;
+}
+
+.dropdown-menu a {
+    color: #000000 !important;  /* 드롭다운 내부 글씨는 검은색 유지 */
+    padding: 12px 20px;         /* 간략 제목 메뉴 내부도 넓게 설정 */
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    text-align: left;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+/* 드롭다운 하위 메뉴 마우스오버 효과 */
+.dropdown-menu a:hover {
+    background-color: #F5F6F8;  /* 배경 라이트 그레이로 변경 */
+    color: #3A7BFF !important;  /* 글자는 포인트 블루로 변경 */
+}
+
+/* 마우스를 WORK 메뉴 위에 올리면 서브메뉴 상자 노출 */
+.nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+
+/* ==========================================================================
+   5. 본문 섹션 및 기존 구조 아이템 레이아웃 (work1 페이지 대응)
+   ========================================================================== */
+.work-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.work-item {
+    display: flex;
+    margin-bottom: 80px;
+    gap: 40px;
+    align-items: center;
+}
+
+.work-image {
+    flex: 1;
+}
+
+.work-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+.work-text {
+    flex: 1;
+}
+
+.work-text h3 {
+    font-size: 24px;
+    margin-bottom: 6px;
+    color: #111;
+}
+
+.work-text .sub-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 14px;
+}
+
+.work-text .description {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.btn-link {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #222;
+    text-decoration: none;
+    border-bottom: 1px solid #222;
+    padding-bottom: 2px;
+}
+
+.btn-link:hover {
+    color: #666;
+    border-color: #666;
+}
+
+/* ==========================================================================
+   6. 신규 추가: 주요 활동 하이라이트 및 포스터 그리드 디자인
+   ========================================================================== */
+.highlight-section {
+    display: block; 
+}
+
+.full-width {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.full-width .description {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+/* 3열 정렬 포스터 구조 */
+.poster-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.poster-item {
+    text-align: center;
+}
+
+/* 포스터 호버 및 마스크 효과 */
+.poster-item .img-wrapper {
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 12px;
+    background-color: #fcfcfc;
+}
+
+.poster-item .img-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.poster-item .img-wrapper img:hover {
+    transform: scale(1.04);
+}
+
+/* 포스터 하단 제목 스타일 */
+.poster-item h4 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    letter-spacing: -0.3px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+/* ==========================================================================
+   7. 신규 추가: 이미지 확대 클릭 모달 팝업 레이아웃
+   ========================================================================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    align-items: center;    /* 수직 중앙 정렬 */
+    justify-content: center;/* 수평 중앙 정렬 */
+    flex-direction: column;
+    animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    max-width: 85%;
+    max-height: 80%;
+    object-fit: contain;
+    border-radius: 4px;
+    animation: zoomIn 0.25s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.95); }
+    to { transform: scale(1); }
+}
+
+#modalCaption {
+    margin-top: 15px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #bbb;
+}
+
+/* ==========================================================================
+   8. 반응형 브레이크포인트 모바일 최적화
+   ========================================================================== */
+@media (max-width: 768px) {
+    .work-item {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .poster-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    .modal-content {
+        max-width: 95%;
+    }
+}
+
+
+
+/* ==========================================
+   신규 추가: 하단 메인으로 돌아가기 중앙 정렬
+   ========================================== */
+.bottom-actions {
+    display: flex;
+    justify-content: center;  /* 가로 방향 정렬을 중앙으로 */
+    align-items: center;
+    padding: 60px 20px 20px 20px; /* 버튼 주변 여백 (위 60px로 여유를 둠) */
+    text-align: center;
+}
+
+/* 기존 btn-more 스타일이 아래 중앙에서도 자연스럽게 매칭되도록 마진 정돈 */
+.bottom-actions .btn-more {
+    margin-top: 0 !important; /* 위 레이아웃과의 간격 중복 방지 */
+}
